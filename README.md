@@ -94,8 +94,21 @@ git init
 git status 
 ```
 
-### 3. git으로 파일 추적하기
+### 3. git 으로 파일 추적하기
 
 ```bash
 git add README.md
+```
+
+### 4. git 으로 모든 파일 추적하기
+
+```bash
+git add .
+```
+git commit -m "메세지"
+git commit -m "깃허브 사용법 정리중"
+
+- 여러줄 작업내역 작성하기
+```bash
+git commit
 ```

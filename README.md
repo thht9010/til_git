@@ -13,10 +13,9 @@
 ![Image](https://github.com/user-attachments/assets/b95b39f3-35bd-489f-8ef5-e46b311d841c)
 
 - `아래는 반드시 VSCode 설치하고 나서 진행하여야 함. (목록 확인 필요)`
-![Image](https://github.com/user-attachments/assets/b0f1f9d9-4b02-40f4-b2ec-26e7f9b18f28)
+  ![Image](https://github.com/user-attachments/assets/b0f1f9d9-4b02-40f4-b2ec-26e7f9b18f28)
 
 - 나머지는 기본값으로 설치완료함.
-
 
 ## Git 사용자 설정
 
@@ -30,13 +29,12 @@
 
 ![Image](https://github.com/user-attachments/assets/48d6afd9-bd8f-4843-81fb-868a615d1355)
 
-
 ## Git 정보 확인 및 셋팅 (터미널에서 진행함)
 
 - Git 버전 확인
 
 ```bash
-git --version 
+git --version
 ```
 
 - 기본 브랜치명을 `main` 으로 설정하기 (초기 설치시 master 로 되어있음.)
@@ -64,12 +62,10 @@ git config --global user.name "아이디"
 git config --global user.email "아이디@gmail.com"
 ```
 
-
 # GitHub
 
 - 회원가입(https://github.com) : 구글계정
 - 예제: til_git 저장소 생성
-
 
 ## GitHub 사용자 계정 보안 설정
 
@@ -91,7 +87,7 @@ git init
 ### 2. 현재 프로젝트 상태보기
 
 ```bash
-git status 
+git status
 ```
 
 ### 3. git 으로 파일 추적하기
@@ -135,7 +131,7 @@ git commit
 [style] 코드의 스타일 (띄워쓰기, 세미콜론 등)
 [refector] 코드 리팩토링(기능변경, 코드 정리 등)
 [test] 테스트 코드 추가한 경우
-[core] 기타(빌드 설정, 패키지 설정 등의 개발환경 변경시) 
+[core] 기타(빌드 설정, 패키지 설정 등의 개발환경 변경시)
 ```
 
 - 옵션 : 23 번 이슈를 해결했고, 회원가입 로그인 기능을 추가했다.
@@ -143,7 +139,6 @@ git commit
 ```
 [feat] 회원가입 로그인 기능 추가 (#23)
 ```
-
 
 ### 7. commit 전체 내역 살펴보기
 
@@ -171,7 +166,6 @@ git show 커밋 아이디
 git commit --amend
 ```
 
-
 ### 9. `GitHub의 온라인 주소 연결`하기
 
 - 등록하기
@@ -196,7 +190,6 @@ git remote remove aaa
 git remote -v
 ```
 
-
 ### 10. GitHub 로 등록하기
 
 ```bash
@@ -212,4 +205,56 @@ git push // 위의 명령과 같음
 git add .
 git commit
 git push
+```
+
+# Git 으로 브랜치 관리하기
+
+## Branch 란?
+
+- 개발에서 구현해야 하는 각각의 기능이 있습니다.
+- 하나의 기능을 구현 완료하였다면 소스를 버전으로 보관하는 것.
+- 다음 기능을 구현한다면 새로운 소스 버전을 만들어서 진행하는 것.
+
+## Branch 초기 이름 셋팅
+
+```bash
+git config --global init.defaultBranch main
+```
+
+## Branch 생성하는 법
+
+```bash
+git branch 브랜치명
+git branch trip
+```
+
+## Branch 목록 보는 법
+
+```bash
+git branch
+```
+
+## 원하는 Branch 로 이동하는 법
+
+```bash
+git switch 브랜치명
+git switch trip
+```
+
+## 원하는 브랜치 삭제하는 법
+
+```bash
+git branch -d 브랜치명
+
+git branch      // 목록 필수 확인
+git switch main   // 다른 브랜치로 이동
+
+git branch -d trip   // 삭제 실습
+```
+
+## 작업이 완료되면 Branch 합치기
+
+```bash
+git merge 대상브랜치
+git merge trip
 ```

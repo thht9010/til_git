@@ -258,3 +258,57 @@ git branch -d trip   // 삭제 실습
 git merge 대상브랜치
 git merge trip
 ```
+
+# Git commit 관리하기
+
+## 1. 바로 이전 커밋 내용 수정하기
+
+- 커밋을 실행 후 바로 내용을 수정하는 경우
+
+```bash
+git commit --amend
+
+내용수정 진행, 저장
+
+git log --oneline
+
+```
+
+## 2. 오랜전 커밋 내용 수정하기 (권장 안해요.)
+
+- 협업에서 문제 발생 소지
+- 커밋 히스토리를 통해서 `해시값` 알아보기
+
+```bash
+git log --oneline
+```
+
+- 해시 값 파악 후 실행(^ 기호는 시작이라는 뜻)
+
+```bash
+git rebase -i 해시값^
+```
+
+```bash
+pick -> edit
+```
+
+- 실제 내용 수정 진행
+
+```bash
+git commit--amend
+
+수정 및 저장
+```
+
+- 마무리해서 main 으로 이동하기
+
+```bash
+git rebase --continue
+```
+
+## 3. 깃허브에 commit 수정 내용 반영하기
+
+### 3.1. 바로 커밋 수정 후 바로 push 하기
+
+### 3.2. 이전 커밋 수정 후 push 하기
